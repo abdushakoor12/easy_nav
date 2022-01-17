@@ -1,14 +1,15 @@
-import 'package:easy_nav/easy_nav.dart';
 import 'package:flutter/material.dart';
 
 class NavManager {
-  final navState = EasyNav.navigatorKey.currentState;
+  final NavigatorState? _navState;
 
-  Future<T?> goto<T extends Object?>(
+  NavManager(this._navState);
+
+  Future<T?> goTo<T extends Object?>(
     Widget screen, {
     bool fullScreenDialog = false,
   }) {
-    return navState!.push(MaterialPageRoute(
+    return _navState!.push(MaterialPageRoute(
         builder: (context) => screen, fullscreenDialog: fullScreenDialog));
   }
 
@@ -16,11 +17,16 @@ class NavManager {
     Widget screen, {
     bool fullScreenDialog = false,
   }) {
-    return navState!.pushReplacement(MaterialPageRoute(
+    return _navState!.pushReplacement(MaterialPageRoute(
         builder: (context) => screen, fullscreenDialog: fullScreenDialog));
   }
 
   void goBack<T extends Object?>([T? result]) {
-    return navState!.pop(result);
+    return _navState!.pop(result);
+  }
+
+  Future<T?> goToAndRemoveUntil<T extends Object?>(Widget screen, RoutePredicate predicate){
+    return _navState!.pushAndRemoveUntil(MaterialPageRoute(
+        builder: (context) => screen), (route) => false);
   }
 }
