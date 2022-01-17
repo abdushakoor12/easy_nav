@@ -19,6 +19,6 @@ class EasyNav {
   }
 
   static DialogManager get dialogManager{
-    return _dialogManager ??= DialogManager();
+    return _dialogManager ??= DialogManager(navigatorKey.currentContext);
   }
 }
