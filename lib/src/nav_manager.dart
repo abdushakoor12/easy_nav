@@ -13,12 +13,22 @@ class NavManager {
         builder: (context) => screen, fullscreenDialog: fullScreenDialog));
   }
 
+  Future<T?> goToNamed<T extends Object?>(
+      String routeName) {
+    return _navState!.pushNamed(routeName);
+  }
+
   Future<T?> replace<T extends Object?>(
     Widget screen, {
     bool fullScreenDialog = false,
   }) {
     return _navState!.pushReplacement(MaterialPageRoute(
         builder: (context) => screen, fullscreenDialog: fullScreenDialog));
+  }
+
+  Future<T?> replaceNamed<T extends Object?>(
+      String routeName) {
+    return _navState!.pushReplacementNamed(routeName);
   }
 
   void goBack<T extends Object?>([T? result]) {
@@ -28,5 +38,9 @@ class NavManager {
   Future<T?> goToAndRemoveUntil<T extends Object?>(Widget screen, RoutePredicate predicate){
     return _navState!.pushAndRemoveUntil(MaterialPageRoute(
         builder: (context) => screen), (route) => false);
+  }
+
+  Future<T?> goToNamedAndRemoveUntil<T extends Object?>(String routeName, RoutePredicate predicate){
+    return _navState!.pushNamedAndRemoveUntil(routeName, (route) => false);
   }
 }
