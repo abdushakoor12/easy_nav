@@ -2,7 +2,7 @@ library easy_nav;
 
 import 'package:flutter/material.dart';
 
-import 'src/snackbar_manager.dart';
+export 'src/snackbar_manager.dart';
 export 'src/dialog_manager.dart';
 export 'src/nav_manager.dart';
 export 'src/bottom_sheet_manager.dart';
