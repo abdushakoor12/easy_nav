@@ -1,9 +1,8 @@
+import 'package:easy_nav/easy_nav.dart';
 import 'package:flutter/material.dart';
 
 class BottomSheetManager {
-  final BuildContext? _context;
-
-  BottomSheetManager(this._context);
+  final BuildContext? _context = EasyNav.navigatorKey.currentContext;
 
   Future<T?> showEasyModalBottomSheet<T>({
     required WidgetBuilder builder,

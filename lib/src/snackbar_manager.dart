@@ -1,9 +1,8 @@
+import 'package:easy_nav/easy_nav.dart';
 import 'package:flutter/material.dart';
 
 class SnackBarManager {
-  final BuildContext? _context;
-
-  SnackBarManager(this._context);
+  final BuildContext? _context = EasyNav.navigatorKey.currentContext;
 
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showEasySnackbar(
       SnackBar snackBar) {

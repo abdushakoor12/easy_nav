@@ -1,9 +1,8 @@
+import 'package:easy_nav/easy_nav.dart';
 import 'package:flutter/material.dart';
 
 class DialogManager {
-  final BuildContext? _context;
-
-  DialogManager(this._context);
+  final BuildContext? _context = EasyNav.navigatorKey.currentContext;
 
   Future<T?> showEasyDialog<T>({
     required WidgetBuilder builder,
