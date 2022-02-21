@@ -1,5 +1,7 @@
 ## EasyNav
 
+| easy_nav         | [![pub package](https://img.shields.io/pub/v/riverpod.svg?label=riverpod&color=blue)](https://pub.dartlang.org/packages/easy_nav)                 |
+
 Just a simple wrapper around flutter navigator, dialogs and snackbar to do those things without context.
 
 Don't forget to do add the navigator key:
