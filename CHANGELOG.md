@@ -1,3 +1,7 @@
+## 0.0.3
+
+* Predicate Fixed
+
 ## 0.0.2
 
 * Added Documentation
