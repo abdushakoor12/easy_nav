@@ -35,11 +35,11 @@ class NavManager {
   Future<T?> goToAndRemoveUntil<T extends Object?>(
       Widget screen, RoutePredicate predicate) {
     return _navState!.pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => screen), (route) => false);
+        MaterialPageRoute(builder: (context) => screen), predicate);
   }
 
   Future<T?> goToNamedAndRemoveUntil<T extends Object?>(
       String routeName, RoutePredicate predicate) {
-    return _navState!.pushNamedAndRemoveUntil(routeName, (route) => false);
+    return _navState!.pushNamedAndRemoveUntil(routeName, predicate);
   }
 }
