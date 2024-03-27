@@ -37,7 +37,7 @@ class BottomSheetManager {
     );
   }
 
-  PersistentBottomSheetController<T> showEasyBottomSheet<T>({
+  PersistentBottomSheetController showEasyBottomSheet({
     required WidgetBuilder builder,
     Color? backgroundColor,
     double? elevation,
