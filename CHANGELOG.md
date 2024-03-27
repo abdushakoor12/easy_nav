@@ -1,3 +1,7 @@
+## 0.0.5
+
+- Match method signature for showBottomSheet()
+
 ## 0.0.4
 
 - Update Flutter Constraints
